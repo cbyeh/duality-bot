@@ -1,21 +1,20 @@
 import discord
+from discord.ext import commands
+
 import logging
 import os
+
 from dotenv import load_dotenv
-from cogs import hello_world
 
 load_dotenv()
 
-client = discord.Client()
+bot = commands.Bot(command_prefix="$")
 
-
-@client.event
-async def on_ready():
-    print("We have logged in as {0.user}".format(client))
-
-
-# Apply decorators to other functions
-client.event(hello_world.on_message)
+# Register cogs
+for file in os.listdir("cogs"):
+    if file.endswith(".py"):
+        name = file[:-3]
+        bot.load_extension(f"cogs.{name}")
 
 # Set up logger
 logger = logging.getLogger("discord")
@@ -27,4 +26,4 @@ handler.setFormatter(
 logger.addHandler(handler)
 
 # Run bot
-client.run(os.getenv("TOKEN"))
+bot.run(os.getenv("TOKEN"))
