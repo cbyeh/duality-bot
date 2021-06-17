@@ -1,4 +1,5 @@
 from discord.ext import commands
+import random
 
 
 class CoinToss(commands.Cog):
@@ -7,7 +8,11 @@ class CoinToss(commands.Cog):
 
     @commands.command()
     async def flip(self, message):
-        await message.channel.send("Heads!")
+        res = "**Heads**"
+        flip = random.randint(0, 1)
+        if flip == 0:
+            res = "**Tails**"
+        await message.reply(f"{message.author.name} landed on {res}")
 
 
 def setup(bot):
