@@ -4,23 +4,29 @@ A functional discord bot to make your life easier. Set reminders, twitter alerts
 
 ## Commands
 
-TBA
+| Command | Description                                 | Usage          | Examples                      |
+|---------|---------------------------------------------|----------------|-------------------------------|
+| $avatar | Get the avatar of yourself or another user. | $avatar (user) | $avatar                       |
+|         | Works for any user on discord.              |                | $avatar User#0001             |
+| $cat    | Get a random cat picture.                   | $cat           | $cat                          |
+| $flip   | Flip a coin.                                | $flip          | $flip                         |
+| $remind | Set a reminder.                             | $remind        | $remind 1 day Delete fortnite |
 
 ## Dependencies
 
 If you would like to edit this bot yourself, install the following:
 
-1. **Python** installed
+1. **Python**
 
 2. **[discord.py](https://discordpy.readthedocs.io/en/stable/)**
 
-Use this command on **\*nix systems** to install **<span>discord.py</span>:**
+* Use this command on **\*nix systems** to install **<span>discord.py</span>:**
 
-`python3 -m pip install -U discord.py`
+* `python3 -m pip install -U discord.py`
 
-If you are using **Windows**, then the following should be used instead:
+* If you are using **Windows**, then the following should be used instead:
 
-`py -3 -m pip install -U discord.py`
+* `py -3 -m pip install -U discord.py`
 
 3. **dotenv**
 
