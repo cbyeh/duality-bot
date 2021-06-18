@@ -4,14 +4,15 @@ A functional Discord bot to make your life easier. Set reminders, twitter alerts
 
 ## Commands
 
-| Command  | Description                                                                                                            | Usage            | Examples                                     |
-|----------|------------------------------------------------------------------------------------------------------------------------|------------------|----------------------------------------------|
-| $avatar  | Get the avatar of yourself or another user.<br />Works for any user on discord.                                        | $avatar (user)   | **$avatar**<br />**$avatar User#0001**       |
-| $cat     | Get a random cat picture.                                                                                              | $cat             | **$cat**                                     |
-| $flip    | Flip a coin.                                                                                                           | $flip            | **$flip**                                    |
-| $remind  | Set a reminder.<br />May use intervals of seconds, minutes, ... months, years.<br />User is pinged in the server used. | $remind          | **$remind 1 day Delete fortnite**            |
-| $remindm | Similar to $remind except the user is Direct Messaged on discord.                                                      | $remindm         | **$remindm 2 hr Play fortnite**              |
-| $tweet   | Get alerted whenever the specified twitter account tweets.                                                             | $tweet (account) | **$tweet BarackObama**<br />**$tweet @jack** |
+| Command   | Description                                                                                                                                  | Usage              | Examples                                     |
+|-----------|----------------------------------------------------------------------------------------------------------------------------------------------|--------------------|----------------------------------------------|
+| $avatar   | Get the avatar of yourself or another user.<br />Works for any user on discord.                                                              | $avatar (user)     | **$avatar**<br />**$avatar User#0001**       |
+| $cat      | Get a random cat picture.                                                                                                                    | $cat               | **$cat**                                     |
+| $flip     | Flip a coin.                                                                                                                                 | $flip              | **$flip**                                    |
+| $password | Generates and Direct Messages you a URL safe password of specified length.                                                                   | $password (#bytes) | **$password 18**                             |
+| $remind   | Set a reminder after a set countdown.<br />May use intervals of seconds, minutes, ... months, years.<br />User is pinged in the server used. | $remind            | **$remind 1 day Delete fortnite**            |
+| $remindm  | Similar to $remind except the user is Direct Messaged on discord.                                                                            | $remindm           | **$remindm 2 hr Play fortnite**              |
+| $tweet    | Get alerted whenever the specified twitter account tweets.                                                                                   | $tweet (account)   | **$tweet BarackObama**<br />**$tweet @jack** |
 
 ## Dependencies
 

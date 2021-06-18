@@ -12,7 +12,9 @@ class CoinToss(commands.Cog):
         flip = random.randint(0, 1)
         if flip == 0:
             res = "**Tails**"
-        await message.reply(f"{message.author.name} landed on {res}")
+        await message.reply(
+            f"{message.author.name} flipped a coin and it landed on:\n{res}"
+        )
 
 
 def setup(bot):
