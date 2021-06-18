@@ -1,4 +1,5 @@
 from discord.ext import commands
+import aiohttp
 
 
 class Cat(commands.Cog):
@@ -7,7 +8,13 @@ class Cat(commands.Cog):
 
     @commands.command()
     async def cat(self, message):
-        await message.channel.send("Cat")
+        cat_url = "https://purr.objects-us-east-1.dream.io/i/2014-11-0100.22.56.jpg"
+        async with aiohttp.ClientSession() as session:
+            async with session.get("https://aws.random.cat/meow") as res:
+                if res.status == 200:
+                    data = await res.json()
+                    cat_url = data["file"]
+        await message.channel.send(cat_url)
 
 
 def setup(bot):

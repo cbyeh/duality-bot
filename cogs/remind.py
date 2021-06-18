@@ -27,7 +27,7 @@ class Reminder(commands.Cog):
     @commands.command()
     async def remindm(self, message):
         msg = self.remind_helper(message)
-        await message.channel.send("Remind")
+        await message.author.send("Remind")
 
 
 def setup(bot):
