@@ -1,5 +1,5 @@
 from discord.ext import commands
-import asyncio
+from asyncio import sleep as s
 
 
 class Reminder(commands.Cog):
@@ -17,17 +17,37 @@ class Reminder(commands.Cog):
 
     def remind_helper(self, message):
         tokens = message.message.content.split()
-        return tokens
+        if len(tokens) < 4:
+            raise Exception("Bad argument(s)")
+        try:
+            val = int(tokens[1])
+            if val < 1:
+                raise Exception("Bad argument(s)")
+        except ValueError:
+            raise Exception("Bad argument(s)")
+        return (int(tokens[1]), "Hello world")
 
     @commands.command()
     async def remind(self, message):
-        msg = self.remind_helper(message)
-        await message.channel.send("Remind")
+        try:
+            msg = self.remind_helper(message)
+        except:
+            return await message.reply(
+                "Invalid usage.\n```$remind 3 hrs Remind me to do something```"
+            )
+        await s(msg[0])
+        await message.reply(f"Reminder: **{msg[1]}**")
 
     @commands.command()
     async def remindm(self, message):
-        msg = self.remind_helper(message)
-        await message.author.send("Remind")
+        try:
+            msg = self.remind_helper(message)
+        except:
+            return await message.reply(
+                "Invalid usage.\n```$remind 3 hrs Remind me to do something```"
+            )
+        await s(msg[0])
+        await message.author.send(f"Reminder: **{msg[1]}**")
 
 
 def setup(bot):
